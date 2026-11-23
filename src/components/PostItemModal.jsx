@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
-import { authHeaders } from "../utils/auth";
+import { API, authHeaders, getToken } from "../utils/auth";
 import "../css/PostItem.css";
 
-// const res = await fetch(`${API}/api/listings`, { method: "POST", headers: authHeaders(), body: data });
-const API = import.meta.env.VITE_API_URL || "http://localhost:5000";
 const categories = ["Phones & gadgets", "Fashion", "Home & kitchen", "Books & study", "Games & consoles", "Sports & bikes", "Other"];
 const conditions = ["New", "Like new", "Good", "Fair"];
 
@@ -38,6 +36,7 @@ export default function PostItemModal({ onClose, onPosted }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!getToken()) return setError("Your session has ended. Please log in again.");
     if (!file) return setError("Please add a photo of your item.");
     if (!form.title.trim()) return setError("Please enter a title.");
 
@@ -48,8 +47,12 @@ export default function PostItemModal({ onClose, onPosted }) {
       data.append("image", file);
       Object.entries(form).forEach(([key, value]) => data.append(key, value));
 
-      // do NOT set Content-Type yourself; the browser sets it for FormData
-      const res = await fetch(`${API}/api/listings`, { method: "POST", body: data });
+      // the token goes in the headers; do NOT set Content-Type yourself
+      const res = await fetch(`${API}/api/listings`, {
+        method: "POST",
+        headers: authHeaders(),
+        body: data,
+      });
       const json = await res.json();
       if (!res.ok) throw new Error(json.message || "Upload failed");
 
