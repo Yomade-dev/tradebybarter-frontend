@@ -1,0 +1,237 @@
+.home-page {
+  position: relative;
+  min-height: 100vh;
+  flex-shrink: 0;                      /* stops the page box being squeezed to one screen */
+  background-color: #0F2C46;
+  background-image: linear-gradient(160deg, #0F2C46 0%, #14b8a6 100%);
+  padding-bottom: 150px;               /* room so the last cards clear the + button and nav */
+}
+
+.home-content {
+  padding: 1.5rem 1rem;
+  max-width: 480px;
+  position: relative;
+  z-index: 1;
+}
+
+.home-brand {
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+
+/* Glass search bar */
+.search-bar {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 14px;
+  padding: 0.6rem 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.search-label {
+  display: block;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.15rem;
+}
+
+.search-input {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  font-size: 0.95rem;
+  color: #ffffff !important;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.search-input:focus {
+  box-shadow: none !important;
+}
+
+/* Glass featured banner */
+.featured-banner {
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+  margin-bottom: 2rem;
+}
+
+.banner-accent {
+  height: 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.banner-body {
+  padding: 1.5rem 1.25rem 3rem 1.25rem;
+}
+
+.banner-body h5 {
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.4rem;
+}
+
+.banner-body p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.section-label {
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+/* Glass listing cards */
+.listing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.listing-card {
+  position: relative;                  /* NEW: lets the Save button sit inside the card */
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.listing-accent {
+  height: 5px;
+}
+
+.listing-body {
+  padding: 1rem;
+}
+
+.listing-body h6 {
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.3rem;
+}
+
+.listing-body p {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+/* Floating action button */
+.fab-button {
+  position: fixed;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #f59e0b;
+  color: #0F2C46;
+  font-size: 1.75rem;
+  font-weight: 700;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Glass bottom nav — iOS-style frosted tab bar */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(15, 44, 70, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.75rem 0;
+  z-index: 5;
+}
+
+.nav-item {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+}
+
+.nav-item.active {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.nav-spacer {
+  width: 56px;
+}
+
+/* Search button */
+.search-row { display: flex; align-items: center; gap: 0.5rem; }
+.search-row .search-input { flex: 1; min-width: 0; }
+.search-go {
+  flex: none; padding: 0.35rem 0.9rem; border: none; border-radius: 999px;
+  background: #f59e0b; color: #0F2C46; font-weight: 700; font-size: 0.85rem; cursor: pointer;
+}
+
+/* Listing photos and status messages */
+.listing-img { display: block; width: 100%; height: 7.5rem; object-fit: cover; }
+.listing-wants { margin-top: 0.25rem !important; }
+.home-status { text-align: center; color: rgba(255, 255, 255, 0.85); margin: 1rem 0; }
+.home-error { color: #fca5a5; }
+
+/* Bottom nav items are buttons now */
+.bottom-nav .nav-item { background: none; border: none; font-family: inherit; padding: 0.25rem 0.75rem; cursor: pointer; }
+.bottom-nav .nav-spacer { padding: 0; cursor: default; }
+.bottom-nav .nav-item:focus-visible { outline: 2px solid #f59e0b; outline-offset: 2px; border-radius: 8px; }
+
+/* NEW: Save button, a small black pill at the bottom right of the card */
+.listing-card.has-save .listing-body { padding-bottom: 2.9rem; }  /* room so text never sits under the button */
+.card-btn {
+  position: absolute; right: 0.75rem; bottom: 0.75rem;
+  display: inline-block; width: auto; height: auto; min-width: 3.6rem;
+  padding: 0.3rem 0.85rem; border-radius: 999px; cursor: pointer;
+  background: #000; color: #fff; border: 1px solid #000;
+  font-size: 0.78rem; font-weight: 600; line-height: 1.2;
+}
+.card-btn[aria-pressed="true"] { color: #f59e0b; border-color: #f59e0b; }
+.card-btn:focus-visible { outline: 2px solid #f59e0b; outline-offset: 2px; }
+
+/* NEW: Delete button (My listings page) */
+.delete-btn {
+  margin-top: 0.6rem; padding: 0.3rem 0.9rem; border-radius: 999px; cursor: pointer;
+  border: 1px solid rgba(252, 165, 165, 0.7); background: rgba(239, 68, 68, 0.2);
+  color: #fecaca; font-size: 0.8rem; font-weight: 600;
+}
+
+/* Chat button on cards (bottom left) */
+.chat-btn { right: auto; left: 0.75rem; background: #f59e0b; border-color: #f59e0b; color: #0F2C46; }
+
+/* Unread badge on the Chat tab */
+.bottom-nav .nav-item { position: relative; }
+.nav-badge {
+  position: absolute; top: -0.3rem; right: -0.2rem; min-width: 1.1rem; height: 1.1rem; padding: 0 0.25rem;
+  display: grid; place-items: center; border-radius: 999px;
+  background: #f59e0b; color: #0F2C46; font-size: 0.65rem; font-weight: 700; line-height: 1;
+}
+body:has(.home-page) { background: #0F2C46; }

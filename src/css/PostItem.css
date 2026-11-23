@@ -1,0 +1,49 @@
+.pi-overlay {
+  position: fixed; inset: 0; z-index: 20;
+  display: flex; align-items: flex-end; justify-content: center;
+  background: rgba(5, 20, 35, 0.6);
+  backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+}
+.pi-sheet {
+  width: 100%; max-width: 480px; max-height: 92vh; overflow-y: auto;
+  padding: 1.25rem 1.25rem 1.75rem; color: #fff; text-align: left;
+  background: rgba(15, 44, 70, 0.88);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px 20px 0 0;
+}
+.pi-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+.pi-header h2 { margin: 0; color: #fff; font-size: 1.3rem; }
+.pi-close { background: none; border: none; color: #fff; font-size: 1.8rem; line-height: 1; cursor: pointer; }
+
+.pi-photo {
+  display: grid; place-items: center; height: 11rem; margin-bottom: 1rem; overflow: hidden; cursor: pointer;
+  border: 2px dashed rgba(255, 255, 255, 0.4); border-radius: 14px;
+  background: rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.85);
+}
+.pi-photo img { width: 100%; height: 100%; object-fit: cover; }
+.pi-sr { position: absolute; width: 1px; height: 1px; opacity: 0; overflow: hidden; }
+.pi-photo:focus-within { outline: 3px solid #f59e0b; outline-offset: 2px; }
+
+.pi-field { display: block; margin-bottom: 0.9rem; font-size: 0.85rem; color: rgba(255, 255, 255, 0.8); }
+.pi-field input, .pi-field select, .pi-field textarea {
+  display: block; width: 100%; margin-top: 0.3rem; padding: 0.6rem 0.8rem;
+  background: rgba(255, 255, 255, 0.12); color: #fff; font-size: 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 10px;
+}
+.pi-field input::placeholder, .pi-field textarea::placeholder { color: rgba(255, 255, 255, 0.5); }
+.pi-field option { color: #0F2C46; }
+.pi-field input:focus, .pi-field select:focus, .pi-field textarea:focus { outline: 2px solid #f59e0b; border-color: transparent; }
+.pi-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+
+.pi-error { color: #fca5a5; margin: 0 0 0.75rem; font-size: 0.9rem; }
+.pi-submit {
+  width: 100%; padding: 0.8rem; border: none; border-radius: 999px;
+  background: #f59e0b; color: #0F2C46; font-weight: 700; font-size: 1rem; cursor: pointer;
+}
+.pi-submit:disabled { opacity: 0.6; cursor: wait; }
+
+@media (min-width: 600px) {
+  .pi-overlay { align-items: center; }
+  .pi-sheet { border-radius: 20px; }
+}

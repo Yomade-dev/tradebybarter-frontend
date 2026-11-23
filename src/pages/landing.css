@@ -1,0 +1,467 @@
+/* Everything is scoped to .tb-landing so it can't affect your other pages */
+.tb-landing {
+  --tb-glass: rgba(255, 255, 255, 0.12);
+  --tb-border: rgba(255, 255, 255, 0.24);
+  --tb-amber: #f59e0b;
+  --tb-teal: #2dd4bf;
+  min-height: 100vh;
+  color: #fff;
+  background: linear-gradient(160deg, #0b3558 0%, #12706f 55%, #19b5a5 100%)
+    fixed;
+}
+html {
+  scroll-behavior: smooth;
+}
+.tb-landing section[id],
+.tb-landing header[id] {
+  scroll-margin-top: 80px;
+}
+.tb-landing h1,
+.tb-landing h2,
+.tb-landing h3 {
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.tb-landing h1 {
+  font-size: clamp(2.2rem, 5.2vw, 3.8rem);
+  line-height: 1.08;
+}
+.tb-landing h2 {
+  font-size: clamp(1.6rem, 3.2vw, 2.3rem);
+}
+.tb-landing h3 {
+  font-size: 1.1rem;
+}
+.tb-landing p {
+  color: rgba(255, 255, 255, 0.85);
+}
+.tb-landing a:focus-visible,
+.tb-landing button:focus-visible {
+  outline: 3px solid var(--tb-amber);
+  outline-offset: 2px;
+}
+
+/* Glass + accents (same idea as your Home cards) */
+.tb-glass {
+  background: var(--tb-glass);
+  border: 1px solid var(--tb-border);
+  border-radius: 20px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+.tb-top-teal {
+  border-top: 4px solid var(--tb-teal);
+}
+.tb-top-amber {
+  border-top: 4px solid var(--tb-amber);
+}
+
+/* Buttons */
+.tb-btn {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  background: var(--tb-amber);
+  color: #1b1b1b;
+  font-weight: 600;
+  border: 1px solid var(--tb-amber);
+  border-radius: 999px;
+  padding: 0.5rem 1.25rem;
+  transition: filter 0.2s;
+}
+.tb-btn:hover {
+  filter: brightness(1.08);
+  color: #1b1b1b;
+}
+.tb-btn-glass {
+  background: var(--tb-glass);
+  color: #fff;
+  border-color: var(--tb-border);
+  backdrop-filter: blur(10px);
+}
+.tb-btn-glass:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+}
+.tb-btn-lg {
+  padding: 0.8rem 1.8rem;
+  font-size: 1.05rem;
+}
+.tb-btn-sm {
+  padding: 0.35rem 1rem;
+  font-size: 0.9rem;
+}
+
+/* Navbar */
+.tb-nav {
+  background: rgba(11, 53, 88, 0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--tb-border);
+}
+.tb-brand {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #fff;
+  text-decoration: none;
+}
+.tb-nav .nav-link {
+  color: rgba(255, 255, 255, 0.9);
+}
+.tb-nav .nav-link:hover {
+  color: var(--tb-amber);
+}
+
+/* Hero */
+.tb-hero {
+  padding: 4.5rem 0 4rem;
+}
+.tb-lead {
+  font-size: 1.2rem;
+  max-width: 34rem;
+  margin: 1.25rem 0 2rem;
+}
+.tb-swap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.tb-swap-card {
+  flex: 1;
+  padding: 0 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.tb-swap-card strong,
+.tb-swap-card small,
+.tb-swap-card .tb-tag {
+  padding: 0 1rem;
+}
+.tb-swap-card small {
+  color: rgba(255, 255, 255, 0.75);
+}
+.tb-swap-img {
+  width: 100%;
+  height: 11rem;
+  object-fit: cover;
+  margin-bottom: 0.75rem;
+}
+.tb-tag {
+  color: var(--tb-amber);
+  font-weight: 600;
+  margin-top: 0.4rem;
+}
+.tb-swap-btn {
+  flex: none;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 50%;
+  border: none;
+  background: var(--tb-amber);
+  color: #1b1b1b;
+  font-size: 1.4rem;
+  font-weight: 700;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  transition: transform 0.35s ease;
+}
+.tb-swap-btn:hover {
+  transform: rotate(180deg);
+}
+.tb-hint {
+  text-align: center;
+  margin: 1.25rem 0 0;
+}
+
+/* Images (and their fallback while a photo file is missing) */
+.tb-img-fallback {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Sections */
+.tb-section {
+  padding: 4rem 0;
+}
+.tb-sub {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  max-width: 36rem;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 320px;
+}
+
+/* Categories */
+.catego{
+margin-top: 60px;
+}
+.tb-cat {
+  position: relative;
+  display: block;
+  height: 11rem;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--tb-border);
+  text-decoration: none;
+}
+.tb-cat-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.tb-cat:hover .tb-cat-img {
+  transform: scale(1.05);
+}
+.tb-cat-label {
+  position: absolute;
+  left: 0.6rem;
+  right: 0.6rem;
+  bottom: 0.6rem;
+  padding: 0.45rem 0.8rem;
+  background: rgba(11, 53, 88, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--tb-border);
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* How it works */
+.tb-step {
+  padding: 1.5rem;
+  height: 100%;
+}
+.tb-step p {
+  margin: 0;
+}
+.tb-step-n {
+  display: inline-grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  background: var(--tb-amber);
+  color: #1b1b1b;
+  font-weight: 700;
+  margin-bottom: 0.9rem;
+}
+
+/* Listings */
+.tb-listing {
+  height: 100%;
+}
+.tb-listing-img {
+  width: 100%;
+  height: 10rem;
+  object-fit: cover;
+  display: block;
+}
+.tb-listing-body {
+  padding: 1rem;
+}
+.tb-listing-body h3 {
+  margin-bottom: 0.15rem;
+}
+.tb-listing-body small {
+  color: rgba(255, 255, 255, 0.75);
+}
+.tb-listing-body p {
+  margin: 0.5rem 0 0.9rem;
+}
+
+/* Why + CTA + footer */
+.tb-why {
+  padding: 2rem;
+}
+.tb-why p {
+  margin: 0;
+}
+.tb-cta {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+.tb-cta p {
+  font-size: 1.15rem;
+  margin-bottom: 1.75rem;
+}
+.tb-footer {
+  background: #0a2540;
+  border-top: 1px solid var(--tb-border);
+  padding: 4rem 0 1.5rem;
+}
+.tb-footer-brand {
+  display: block;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+.tb-footer-about {
+  max-width: 19rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.75);
+}
+.tb-footer h4 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 1.25rem;
+}
+.tb-footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.tb-footer a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+}
+.tb-footer a:hover {
+  color: var(--tb-amber);
+}
+
+.tb-socials {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1.25rem;
+}
+.tb-footer .tb-social {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--tb-border);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1.05rem;
+}
+.tb-footer .tb-social:hover {
+  color: var(--tb-amber);
+  border-color: var(--tb-amber);
+}
+
+.tb-store {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.1rem;
+}
+.tb-store-icon {
+  font-size: 1.25rem;
+  color: #fff;
+  flex: none;
+}
+.tb-store strong {
+  display: block;
+  color: #fff;
+}
+.tb-store small {
+  display: block;
+}
+.tb-live {
+  color: #4ade80;
+}
+.tb-soon {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.tb-footer-bottom {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.tb-footer-bottom small {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .tb-swap-btn,
+  .tb-cat-img {
+    transition: none;
+  }
+  .tb-swap-btn:hover {
+    transform: none;
+  }
+  .tb-cat:hover .tb-cat-img {
+    transform: none;
+  }
+}
+@media (max-width: 575px) {
+  .tb-swap {
+    flex-direction: column;
+  }
+  .tb-swap-card {
+    width: 100%;
+  }
+  .tb-swap-img {
+    height: 9rem;
+  }
+  .tb-swap-btn {
+    transform: rotate(90deg);
+  }
+  .tb-swap-btn:hover {
+    transform: rotate(270deg);
+  }
+}
+/* Undo the Vite #root layout, only while the landing page is showing */
+#root:has(.tb-landing) {
+  display: block;
+  width: 100%;
+  max-width: none;
+  border-inline: 0;
+  text-align: left;
+}
+
+.tb-landing {
+  overflow-x: clip;   /* replaces overflow-x: hidden, which breaks the sticky navbar */
+  min-height: 100vh;
+}
+
+.tb-landing h1 { margin: 0 0 1rem; }
+
+/* Section headings: always centered */
+.tb-landing .tb-head {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+.tb-landing .tb-head > div {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.tb-landing .tb-head h2 {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 0 0 0.5rem;
+}
+.tb-landing .tb-head .tb-sub {
+  display: block !important;
+  width: 100% !important;
+  max-width: 36rem !important;
+  margin: 0 auto 1rem !important;
+  text-align: center !important;
+}
+.tb-landing .tb-head .tb-btn {
+  margin-top: 0.5rem;
+}

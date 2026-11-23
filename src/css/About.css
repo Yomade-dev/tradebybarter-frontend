@@ -1,0 +1,101 @@
+html {
+  margin: 0;
+  background-color: #0F2C46;
+}
+
+body {
+  margin: 0;
+  background-color: transparent;
+}
+
+.about-page {
+  position: relative;
+  min-height: 100;
+  background-color: #0F2C46; /* mobile default: splash screen navy */
+  background-image: none;
+  padding: 3rem 0;
+}
+
+/* Desktop/tablet: swap to the image background */
+@media (min-width: 769px) {
+  .about-page {
+    background-color: transparent;
+    background-image: var(--about-bg-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+}
+
+/* Darkens the image slightly everywhere, so every glass card stays readable regardless of what's behind it */
+.about-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.about-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+}
+
+/* Title glass card */
+.about-title-glass {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.about-title {
+  color: #ffffff;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* 2x2 grid */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+/* Each glass card */
+.about-glass-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 1.75rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.about-glass-card h2 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.about-glass-card p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Stack to a single column on small screens */
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
