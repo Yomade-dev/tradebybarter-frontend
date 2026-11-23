@@ -12,6 +12,7 @@ import MyListings from "./pages/MyListings";
 import SavedItems from "./pages/SavedItems";
 import TradeHistory from "./pages/TradeHistory";
 import Settings from "./pages/Settings";
+import ItemDetail from "./pages/ItemDetail";
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         <Route path="/saved" element={<SavedItems />} />
         <Route path="/trade-history" element={<TradeHistory />} />
         <Route path="/settings" element={<Settings />} />
+        <Route path="/item/:id" element={<ItemDetail />} />
       </Routes>
     </BrowserRouter>
   );

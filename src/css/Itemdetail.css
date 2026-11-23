@@ -1,0 +1,31 @@
+.item-photo {
+  display: block; width: 100%; max-height: 20rem; object-fit: cover; margin-bottom: 1rem;
+  border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.item-info, .seller-card { text-align: left; }
+.item-title { color: #fff; font-weight: 700; margin-bottom: 0.5rem; }
+.item-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.9rem; }
+.item-tag { padding: 0.15rem 0.7rem; border-radius: 999px; background: rgba(255, 255, 255, 0.18); font-size: 0.78rem; font-weight: 600; }
+.item-label { margin: 0.7rem 0 0.15rem; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255, 255, 255, 0.65); }
+.item-text { margin: 0; color: rgba(255, 255, 255, 0.92); font-size: 0.95rem; white-space: pre-wrap; word-break: break-word; }
+.item-posted { margin: 0.9rem 0 0; font-size: 0.78rem; color: rgba(255, 255, 255, 0.6); }
+
+.seller-row { display: flex; align-items: center; gap: 0.8rem; margin-top: 0.4rem; }
+.seller-avatar {
+  flex: none; width: 3.2rem; height: 3.2rem; border-radius: 50%; object-fit: cover;
+  display: grid; place-items: center; font-weight: 700; font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.2); border: 1px solid rgba(255, 255, 255, 0.35);
+}
+.seller-main { min-width: 0; }
+.seller-name { margin: 0; font-weight: 700; color: #fff; }
+.seller-meta { margin: 0; font-size: 0.8rem; color: rgba(255, 255, 255, 0.7); }
+.seller-chip { margin: 0 0 0 0.5rem; vertical-align: middle; }
+.seller-bio { margin-top: 0.8rem; }
+.seller-note { margin-top: 1rem; }
+
+.chat-cta {
+  width: 100%; margin-top: 1rem; padding: 0.75rem; border: none; border-radius: 999px;
+  background: #f59e0b; color: #0F2C46; font-weight: 700; font-size: 1rem; cursor: pointer;
+}
+.chat-cta:disabled { opacity: 0.6; cursor: wait; }
+.chat-cta:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }

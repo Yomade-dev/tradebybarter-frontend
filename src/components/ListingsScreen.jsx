@@ -72,6 +72,7 @@ export default function ListingsScreen({ title, endpoint, emptyText, canDelete, 
         {items.map((item, index) => (
           <ListingCard
             key={item._id}
+            id={item._id}
             title={item.title}
             condition={`${item.condition} · Trade only`}
             accent={index % 2 === 0 ? '#14b8a6' : '#f59e0b'}
