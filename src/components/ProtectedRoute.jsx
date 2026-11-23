@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
-import { apiRequest } from "../api";
+import { apiRequest } from "../Api";
 
 function ProtectedRoute({ children }) {
   const [status, setStatus] = useState("checking");
@@ -12,7 +12,7 @@ function ProtectedRoute({ children }) {
       return;
     }
 
-    apiRequest("/api/auth/me")
+    apiRequest("/Api/auth/me")
       .then(() => setStatus("allowed"))
       .catch(() => {
         localStorage.removeItem("token");

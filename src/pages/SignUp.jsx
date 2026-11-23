@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Form, Button, Alert } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
-import { apiRequest } from '../api';
+import { apiRequest } from '../Api';
 import { clearSession } from "../utils/auth";
 import '../css/Auth.css';
 
